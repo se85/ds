@@ -1,0 +1,150 @@
+<html>
+<head> 
+<meta name="referrer" content="never"><meta charset="gb2312"> 
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=0"> 
+<meta name="apple-mobile-web-app-capable" content="yes"> 
+<meta name="apple-mobile-web-app-status-bar-style" content="black"> 
+<meta name="format-detection" content="telephone=no"> 
+
+
+<title>跳转中</title>
+
+<link rel="shortcut icon" type="image/x-icon" href="//res.wx.qq.com/mmbizwap/zh_CN/htmledition/images/icon/common/favicon22c41b.ico">
+</head>
+<meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1,initial-scale=1,user-scalable=no">
+    <link rel="stylesheet" href="https://weui.io/style/weui.css">
+
+ 
+    <style type="text/css">
+      body, html {
+          height: 100%;
+          -webkit-tap-highlight-color: transparent;
+      }
+      .page {
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+      }
+
+      .logo-img {
+          display: inline-block;
+          vertical-align: middle;
+          width: 90px;
+          height: 90px;
+          border-radius: 50%;
+      }
+    </style>
+</head>
+<body>
+
+<div class="page msg_success js_show">
+    <div style="position: absolute;width:100%;top: 0;left: 0;background: rgba(0,0,0,.2);color:#2eb769;text-align: center">此链接安全可靠，请放心浏览</div>
+    <div class="weui-msg">
+        <div class="weui-msg__icon-area">
+            <!-- <img class="logo-img" src="./logo.jpg" alt="">-->
+             <!--<img class="logo-img" src="https://img44.pixhost.to/images/358/157558898_src_20160827_170125.jpg" alt="">-->
+            <!-- 默认 -->
+            <img class="logo-img" style="width: 135px;height: 135px" src="" alt="">
+ 
+        </div>
+        <div class="weui-msg__text-area">
+            <h2 class="weui-msg__title"><span class="tel-num">　</span></h2>
+            <p class="weui-msg__desc">点击添加好友 自动复制微信号<br>请打开微信搜索添加<!--  <br> <span class="show-tel">微信号：<span class="tel-num"></span> </span>--></p>
+            <!--<p class="weui-msg__desc">点击添加好友 自动复制微信号<br>请打开微信搜索添加&lt;!&ndash;  <br> <span class="show-tel">微信号：<span class="tel-num"></span> </span>&ndash;&gt;</p>-->
+
+        </div>
+        <div class="weui-msg__opr-area">
+            <p class="weui-btn-area">
+                <a href="javascript:void(0);" class="weui-btn weui-btn_primary copy-btn" data-clipboard-action="copy" data-clipboard-target=".tel">添加好友</a>
+            </p>
+        </div>
+        <div class="weui-msg__tips-area">
+            <span class="tel tel-num" style="opacity: 0;position: absolute;"></span>
+            <p class="weui-msg__tips">点击“添加好友”即可添加对方好友</p>
+        </div>
+        <div class="weui-msg__extra-area">
+            <div class="weui-footer">
+               <p class="weui-footer__links">
+                    <a href="javascript:void(0);" class="weui-footer__link">官方网站认证</a>
+                </p>
+                <p class="weui-footer__text">Copyright @ 2013-2020 </p>
+            </div>
+        </div>
+    </div>
+
+
+
+</div>
+ <!---微信跳转联系QQ：904999988 www.wxticket.com -->
+<div id="toast" style="display: none;">
+    <div class="weui-mask_transparent"></div>
+    <div class="weui-toast">
+        <i class="weui-icon-success-no-circle weui-icon_toast"></i>
+        <p class="weui-toast__content">已复制微信号</p>
+    </div>
+</div>en
+<!--<div id="example2" style="display: none;">
+    <audio id="myAudio1" src="./audio.m4a" autoplay></audio>
+</div>-->
+
+<script src="https://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+<script type="text/javascript">
+    // 对浏览器的UserAgent进行正则匹配，不含有微信独有标识的则为其他浏览器
+    var useragent = navigator.userAgent;
+    // if (useragent.match(/aweme/i) != 'aweme') {
+    //     // 这里警告框会阻塞当前页面继续加载
+
+    //     // 以下代码是用javascript强行关闭当前页面
+    //     var opened = window.open('about:blank', '_self');
+    //     opened.opener = null;
+    //     opened.close();
+    // }
+</script>
+
+<script src="https://cdn.bootcss.com/clipboard.js/2.0.4/clipboard.js"></script>
+<script>
+
+    arr_wx=[{"img":"https://ae01.alicdn.com/kf/U7a71bff4dea94dca876d5329193fe893m.jpg","wxhao":"ceshi123"}];
+    var wx_index = Math.floor((Math.random()*arr_wx.length));
+    var stxlwx = arr_wx[wx_index];
+    console.log(stxlwx);
+    $(function () {
+        $('.logo-img').attr('src',stxlwx.img);
+        $('.tel-num').text(stxlwx.wxhao);
+        $('.show-tel').show();
+    });
+    var isFirst = true;
+    var clipboard = new ClipboardJS('.copy-btn');
+    clipboard.on('success', function(e) {
+        var $toast = $('#toast');
+
+        if ($toast.css('display') != 'none') return;
+        $toast.fadeIn(100);
+        setTimeout(function () {
+            $toast.fadeOut(100);
+        }, 2000);
+        setTimeout(function () {
+            location.href = "weixin://";
+        }, 1000);
+        setTimeout(function () {
+          if (canTiaozhuan) {
+            location.href = "xxxx";
+          }
+            
+        }, 2000);
+
+    });
+  
+    clipboard.on('error', function(e) {
+        location.href = "weixin://";
+    });
+
+    $(function () {
+        $('.ren-num').text(parseInt(Math.random()*500) +500);
+    });
+</script>
+ 
+</body>
+</html>
